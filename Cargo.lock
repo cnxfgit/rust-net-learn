@@ -7,5 +7,9 @@ name = "rust-net-learn"
 version = "0.1.0"
 
 [[package]]
-name = "server"
+name = "tcpclient"
+version = "0.1.0"
+
+[[package]]
+name = "tcpserver"
 version = "0.1.0"
