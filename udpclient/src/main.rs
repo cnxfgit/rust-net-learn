@@ -10,7 +10,7 @@ fn main() -> io::Result<()> {
         socket.send(input.as_bytes())?;
 
         let mut buf = [0u8; 1500];
-        socket.recv_from(&mut buf)?;
+        let (_size, _src) = socket.recv_from(&mut buf)?;
         println!("recv: {}", String::from_utf8(Vec::from(buf)).expect("Can not write buf as string"));
     }
 }
