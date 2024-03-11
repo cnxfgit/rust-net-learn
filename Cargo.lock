@@ -11,6 +11,10 @@ name = "rust-net-learn"
 version = "0.1.0"
 
 [[package]]
+name = "socketaddr"
+version = "0.1.0"
+
+[[package]]
 name = "tcpclient"
 version = "0.1.0"
 
