@@ -15,5 +15,6 @@ members = [
     "udpclient",
     "ipaddr",
     "socketaddr",
-    "ipnet"
+    "ipnet",
+    "use_mio"
 ]
