@@ -17,5 +17,6 @@ members = [
     "socketaddr",
     "ipnet",
     "use_mio",
-    "use_pnet"
+    "use_pnet",
+    "use_dns"
 ]
