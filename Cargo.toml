@@ -18,5 +18,6 @@ members = [
     "ipnet",
     "use_mio",
     "use_pnet",
-    "use_dns"
+    "use_dns",
+    "use_serde"
 ]
