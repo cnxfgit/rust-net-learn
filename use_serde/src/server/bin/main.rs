@@ -1,3 +1,7 @@
+use serde::{Deserialize, Serialize};
+use std::{io::{self, BufRead, BufReader, Write}, net::{TcpListener, TcpStream}, thread};
+
+#[derive(Debug, Serialize, Deserialize)]
 struct Point3D {
     x: u32,
     y: u32,
@@ -18,9 +22,11 @@ fn handle_client(stream: TcpStream) -> io::Result<()> {
 
         let input: Point3D = serde_json::from_slice(&data)?;
         let value = input.x.pow(2) + input.y.pow(2) + input.z.pow(2);
-        stream.get_mut().write(serde_json::to_vec(&(f64::from(value).sqrt())?))?;
+        stream.get_mut().write(&(serde_json::to_vec(&(f64::from(value).sqrt()))?))?;
         stream.get_mut().write(&("\n".as_bytes()))?;
         stream.get_mut().flush()?;
+
+    }
 }
 
 fn main() -> io::Result<()>  {
@@ -30,7 +36,7 @@ fn main() -> io::Result<()>  {
             Err(e) => println!("{}", e),
             Ok(stream) => {
                 thread::spawn(move || {
-                    handle_client(stream).unwrap_or_else(|e| eprintln!("error: {}", e));
+                    handle_client(stream).unwrap_or_else(|err| eprintln!("error: {}", err));
                 });
             }
         }
