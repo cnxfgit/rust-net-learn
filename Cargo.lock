@@ -1840,6 +1840,9 @@ dependencies = [
 [[package]]
 name = "use_build"
 version = "0.1.0"
+dependencies = [
+ "cc",
+]
 
 [[package]]
 name = "use_dns"

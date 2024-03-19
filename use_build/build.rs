@@ -1,4 +1,6 @@
+
 use std::{env, fs::File, io::Write, path::Path};
+extern crate cc;
 
 fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
@@ -10,4 +12,6 @@ fn main() {
             \"hello\"
         }
     ").unwrap();
+
+    cc::Build::new().file("src/hello.c").compile("hello");
 }
