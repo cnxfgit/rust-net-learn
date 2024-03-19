@@ -13,3 +13,7 @@ serde_yaml = "0.8"
 [[bin]]
 name = "server"
 path = "src/server/bin/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/client/bin/main.rs"
