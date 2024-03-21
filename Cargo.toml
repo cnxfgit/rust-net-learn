@@ -20,5 +20,6 @@ members = [
     "use_pnet",
     "use_dns",
     "use_serde",
-    "use_build"
+    "use_build",
+    "use_grpc"
 ]
