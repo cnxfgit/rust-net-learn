@@ -21,5 +21,6 @@ members = [
     "use_dns",
     "use_serde",
     "use_build",
-    "use_grpc"
+    "use_grpc",
+    "use_lettre"
 ]
